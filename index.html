@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>peg | PEG on Arc</title>
+    <meta
+      name="description"
+      content="peg (PEG) — just a cute peg, on ARC. A soft blue pig with a dollar mark, living on Arc chain."
+    />
+    <meta property="og:title" content="peg | PEG on Arc" />
+    <meta
+      property="og:description"
+      content="just a cute peg, on ARC"
+    />
+    <meta property="og:image" content="assets/logo.webp" />
+    <meta name="theme-color" content="#8EC4F2" />
+    <link rel="icon" type="image/webp" href="assets/logo.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-halo" aria-hidden="true"></div>
+    <canvas id="bubbles" aria-hidden="true"></canvas>
+    <div class="sky" aria-hidden="true">
+      <span class="cloud c1"></span>
+      <span class="cloud c2"></span>
+      <span class="cloud c3"></span>
+      <span class="cloud c4"></span>
+      <span class="blush"></span>
+      <span class="wash"></span>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="nav" id="nav">
+      <a class="brand" href="#hero">
+        <span class="brand-mark">
+          <img src="assets/logo.webp" alt="peg logo" />
+        </span>
+        <span class="brand-copy">
+          <strong>peg</strong>
+          <small>PEG</small>
+        </span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#howtobuy">How to Buy</a>
+        <a href="#chart">Chart</a>
+        <a href="#joinus">Join Us</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="icon-btn" href="https://x.com/pegcoinonarc" target="_blank" rel="noopener" aria-label="peg on X">
+          <img src="assets/icons/x.svg" alt="" />
+        </a>
+        <a class="icon-btn" href="https://dexscreener.com/arc" target="_blank" rel="noopener" aria-label="Dexscreener on Arc">
+          <img src="assets/icons/dexscreener.svg" alt="" />
+        </a>
+        <a class="buy-pill" href="https://app.uniswap.org/swap?chain=arc" target="_blank" rel="noopener">
+          <img src="assets/icons/uniswap.svg" alt="" />
+          <span>Buy PEG</span>
+        </a>
+        <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-copy reveal">
+          <p class="kicker">
+            <span class="peg-mark" aria-hidden="true"></span>
+            Live on Arc Chain
+          </p>
+          <h1>
+            <span class="plush">peg</span>
+          </h1>
+          <p class="symbol-row">
+            <span class="chip">$PEG</span>
+            <span class="chip ghost">Arc</span>
+          </p>
+          <p class="tagline">just a cute peg, on ARC</p>
+          <p class="lede">
+            A fluffy sky-blue pig with a dollar halo on its forehead.
+            Soft on the outside, settled on Circle&rsquo;s dollar chain.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-plush" href="https://app.uniswap.org/swap?chain=arc" target="_blank" rel="noopener">
+              <img src="assets/icons/uniswap.svg" alt="" />
+              Buy on Uniswap
+            </a>
+            <a class="btn btn-soft" href="#chart">
+              <img src="assets/icons/dexscreener.svg" alt="" />
+              Arc Chart
+            </a>
+            <a class="btn btn-soft" href="https://x.com/pegcoinonarc" target="_blank" rel="noopener">
+              <img src="assets/icons/x.svg" alt="" />
+              Follow on X
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-stage reveal delay-1">
+          <div class="plush-well" id="plush-well">
+            <span class="well-glow"></span>
+            <svg class="halo halo-a" viewBox="0 0 220 220" aria-hidden="true">
+              <circle cx="110" cy="110" r="102" />
+            </svg>
+            <svg class="halo halo-b" viewBox="0 0 220 220" aria-hidden="true">
+              <circle cx="110" cy="110" r="88" />
+            </svg>
+            <svg class="halo halo-c" viewBox="0 0 220 220" aria-hidden="true">
+              <circle cx="110" cy="110" r="74" />
+            </svg>
+            <div class="pig-orb">
+              <img src="assets/logo.webp" alt="peg, a cute blue pig" id="hero-pig" />
+            </div>
+            <span class="snout-dot d1"></span>
+            <span class="snout-dot d2"></span>
+            <span class="snout-dot d3"></span>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>peg</span><i></i>
+          <span>PEG</span><i></i>
+          <span>just a cute peg</span><i></i>
+          <span>on ARC</span><i></i>
+          <span>USDC gas</span><i></i>
+          <span>Uniswap</span><i></i>
+          <span>Dexscreener</span><i></i>
+          <span>peg</span><i></i>
+          <span>PEG</span><i></i>
+          <span>just a cute peg</span><i></i>
+          <span>on ARC</span><i></i>
+          <span>USDC gas</span><i></i>
+          <span>Uniswap</span><i></i>
+          <span>Dexscreener</span><i></i>
+        </div>
+      </div>
+
+      <section class="about" id="about">
+        <div class="section-head reveal">
+          <p class="kicker">The pig</p>
+          <h2>Soft ears. A dollar on the brow. A home on Arc.</h2>
+        </div>
+        <div class="about-grid">
+          <figure class="about-portrait reveal">
+            <img src="assets/logo.webp" alt="peg portrait" />
+            <figcaption>
+              <strong>peg</strong>
+              <span>the forehead mark is the whole joke</span>
+            </figcaption>
+          </figure>
+          <div class="about-story reveal delay-1">
+            <p>
+              peg is not a whitepaper with hooves. It is a plush blue pig
+              wearing a quiet $ inside a broken circle &mdash; the kind of mark
+              a stablecoin would get if it ever learned to sit still and look cute.
+            </p>
+            <p>
+              Arc is Circle&rsquo;s chain. Gas is USDC. The book lives on
+              Uniswap. The candles live on Dexscreener. peg just sits in the
+              middle of that, pink snout forward, waiting for the next pat.
+            </p>
+            <p class="story-end">just a cute peg, on ARC</p>
+          </div>
+        </div>
+        <div class="traits">
+          <article class="trait reveal">
+            <div class="trait-mark" aria-hidden="true"></div>
+            <h3>Cute on purpose</h3>
+            <p>Sky fur, blush snout, bead eyes. The whole brand is one still portrait that already looks like a coin.</p>
+          </article>
+          <article class="trait reveal delay-1">
+            <div class="trait-mark" aria-hidden="true"></div>
+            <h3>Marked to the dollar</h3>
+            <p>The forehead glyph is a peg drawn as a halo. Not a lecture. A little circle that never quite closes.</p>
+          </article>
+          <article class="trait reveal delay-2">
+            <div class="trait-mark" aria-hidden="true"></div>
+            <h3>Settled on Arc</h3>
+            <p>Uniswap for the swap. Dexscreener for the tape. USDC for the gas. The pig does not need another chain.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="howtobuy" id="howtobuy">
+        <div class="section-head reveal">
+          <p class="kicker">The path</p>
+          <h2>How to buy PEG</h2>
+          <p class="lede">Four soft steps. Arc uses USDC for gas, so the wallet you fund is the wallet you spend.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <div class="step-icon">
+              <img src="assets/icons/metamask.svg" alt="MetaMask" />
+            </div>
+            <span>01</span>
+            <h3>Open an EVM wallet</h3>
+            <p>MetaMask or any wallet that can add a custom network. Keep it ready for Arc.</p>
+          </li>
+          <li class="step reveal delay-1">
+            <div class="step-icon">
+              <img src="assets/icons/blockscout.svg" alt="Arc explorer" />
+            </div>
+            <span>02</span>
+            <h3>Add Arc and fund USDC</h3>
+            <p>Network: Arc. Chain ID: 5042. RPC: rpc.mainnet.arc.io. Native USDC is also your gas.</p>
+          </li>
+          <li class="step reveal delay-2">
+            <div class="step-icon">
+              <img src="assets/icons/uniswap.svg" alt="Uniswap" />
+            </div>
+            <span>03</span>
+            <h3>Swap on Uniswap</h3>
+            <p>Open Uniswap, switch to Arc, and swap USDC for PEG. Confirm the contract before you sign.</p>
+            <a class="text-link" href="https://app.uniswap.org/swap?chain=arc" target="_blank" rel="noopener">Open Uniswap on Arc</a>
+          </li>
+          <li class="step reveal">
+            <div class="step-icon">
+              <img src="assets/icons/dexscreener.svg" alt="Dexscreener" />
+            </div>
+            <span>04</span>
+            <h3>Watch the Arc chart</h3>
+            <p>Follow the live pair on Dexscreener&rsquo;s Arc feed. The pig stays on the candle.</p>
+            <a class="text-link" href="https://dexscreener.com/arc" target="_blank" rel="noopener">Open Dexscreener Arc</a>
+          </li>
+        </ol>
+      </section>
+
+      <section class="chart" id="chart">
+        <div class="section-head reveal">
+          <p class="kicker">The tape</p>
+          <h2>Arc chart</h2>
+          <p class="lede">Live Dexscreener embed for Arc chain pairs.</p>
+        </div>
+        <div class="chart-window reveal">
+          <div class="chart-shine"></div>
+          <iframe
+            title="Dexscreener Arc chart"
+            src="https://dexscreener.com/arc?embed=1&theme=light&trades=0&info=0"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="chart-note reveal">
+          <a href="https://dexscreener.com/arc" target="_blank" rel="noopener">View Arc pairs on Dexscreener</a>
+        </p>
+      </section>
+
+      <section class="joinus" id="joinus">
+        <div class="section-head reveal">
+          <p class="kicker">The sty</p>
+          <h2>Join us</h2>
+          <p class="lede">The pig is already looking at you. Come sit.</p>
+        </div>
+        <figure class="banner-stage reveal">
+          <img src="assets/banner.png" alt="peg banner" />
+        </figure>
+        <div class="join-row">
+          <a class="join-card reveal" href="https://x.com/pegcoinonarc" target="_blank" rel="noopener">
+            <img src="assets/icons/x.svg" alt="" />
+            <div>
+              <strong>X</strong>
+              <span>@pegcoinonarc</span>
+            </div>
+          </a>
+          <a class="join-card reveal delay-1" href="https://dexscreener.com/arc" target="_blank" rel="noopener">
+            <img src="assets/icons/dexscreener.svg" alt="" />
+            <div>
+              <strong>Dexscreener</strong>
+              <span>Arc charts</span>
+            </div>
+          </a>
+          <a class="join-card reveal delay-2" href="https://app.uniswap.org/swap?chain=arc" target="_blank" rel="noopener">
+            <img src="assets/icons/uniswap.svg" alt="" />
+            <div>
+              <strong>Uniswap</strong>
+              <span>Buy PEG</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand" href="#hero">
+        <span class="brand-mark">
+          <img src="assets/logo.webp" alt="peg" />
+        </span>
+        <span class="brand-copy">
+          <strong>peg</strong>
+          <small>PEG on Arc</small>
+        </span>
+      </a>
+      <p>just a cute peg, on ARC</p>
+      <div class="footer-links">
+        <a href="https://x.com/pegcoinonarc" target="_blank" rel="noopener" aria-label="X">
+          <img src="assets/icons/x.svg" alt="" />
+        </a>
+        <a href="https://dexscreener.com/arc" target="_blank" rel="noopener" aria-label="Dexscreener">
+          <img src="assets/icons/dexscreener.svg" alt="" />
+        </a>
+        <a href="https://app.uniswap.org/swap?chain=arc" target="_blank" rel="noopener" aria-label="Uniswap">
+          <img src="assets/icons/uniswap.svg" alt="" />
+        </a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
